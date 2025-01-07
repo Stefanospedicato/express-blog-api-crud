@@ -20,4 +20,10 @@ Ora passiamo ad implementare le logiche delle nostre CRUD:
 - In Show e Destroy, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
 
 ## SVOLGIMENTO
-- 
+- Ho creato innanzitutto i file che mi sono serviti come da consegna
+- Sono partito quindi dal creare il controller base, con le semplici res.send e i messaggi di default.
+- Ho creato nella routers il mio file che contiene tutte le rotte e ho importato express e il controller. Qui ho anche inizializzato il router.
+- Ho tracciato le mie rotte utilizzando l'oggetto importato dal file del controller.
+- Ho creato il file app.js per il mio server e ho inizializzato la porta ed express.
+- Su thunderclient ho ricevuto le risposte nel modo corretto nei rispettivi metodi.
+- Ho quindi utilizzato il mio array di post nella creazione delle funzioni richieste da consegna nelle nostre CRUD.
