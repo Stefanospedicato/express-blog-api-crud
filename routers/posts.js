@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const postsController = require('../controllers/postsController');
 
-router.get('/' , posts.index);
-router.get('/:id' , posts.show);
-router.post('/' , posts.store);
-router.put('/:id' , posts.update);
-router.patch('/:id' , posts.modify);
-router.delete('/:id' , posts.destroy);
+router.get('/' , postsController.index);
+router.get('/:id' , postsController.show);
+router.post('/' , postsController.store);
+router.put('/:id' , postsController.update);
+router.patch('/:id' , postsController.modify);
+router.delete('/:id' , postsController.destroy);
 
 module.exports = router
 
