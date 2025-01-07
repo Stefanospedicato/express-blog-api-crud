@@ -34,9 +34,20 @@ const modify = (req,res) => {
 const destroy = (req,res) => {
   const id = req.params.id;
   const post = posts.find(post => post.id == id)
+ 
+  if(!post){
+    res.status(404)
+    return res.json({
+      message: 'Questo post non esiste',
+      status: 404,
+      error: 'Not Found'
+    })
+  } 
+  
   posts.splice(posts.indexOf(post) , 1)
   res.sendStatus(204)
   console.log(posts);
+  
 }
 
 module.exports = {
