@@ -1,8 +1,12 @@
-const { log } = require('console');
 const posts = require('../data/posts')
 
 const index = (req,res) => {
-  res.json(posts)
+  let filteredPosts = posts;
+
+  if(req.query.tags){
+    filteredPosts = posts.filter(post => post.tags.includes(req.query.tags))
+  }
+  res.json(filteredPosts)
 }
 
 const show = (req,res) => {
@@ -43,7 +47,7 @@ const destroy = (req,res) => {
       error: 'Not Found'
     })
   } 
-  
+
   posts.splice(posts.indexOf(post) , 1)
   res.sendStatus(204)
   console.log(posts);
