@@ -1,3 +1,4 @@
+const { log } = require('console');
 const posts = require('../data/posts')
 
 const index = (req,res) => {
@@ -31,7 +32,11 @@ const modify = (req,res) => {
 }
 
 const destroy = (req,res) => {
-  res.send('Elimino posts')
+  const id = req.params.id;
+  const post = posts.find(post => post.id == id)
+  posts.splice(posts.indexOf(post) , 1)
+  res.sendStatus(204)
+  console.log(posts);
 }
 
 module.exports = {
