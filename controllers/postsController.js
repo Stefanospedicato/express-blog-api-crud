@@ -53,7 +53,21 @@ const update = (req,res) => {
 }
 
 const modify = (req,res) => {
-  res.send('Modifica parziale di un post con id' + req.params.id)
+  const id = parseInt(req.params.id);
+  const post = posts.find(post => post.id === id);
+  if(!post){
+    res.status(404);
+    return {
+      message : 'Post non trovato',
+      status : 404,
+      error : 'Not Found'
+    }
+  }
+  for(let key in req.body){
+    post[key] = req.body[key]
+  }
+
+  res.json(post)
 }
 
 const destroy = (req,res) => {
