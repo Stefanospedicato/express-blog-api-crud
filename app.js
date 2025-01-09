@@ -13,8 +13,10 @@ app.get('/' , (req,res) => {
 })
 
 app.use('/posts' , postsRouter);
+
 app.use(showError);
-app.use(notFound);
+
+// app.use(notFound);
 
 app.listen(port , () => {
   console.log('Ascolto...');
