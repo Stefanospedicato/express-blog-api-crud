@@ -48,6 +48,8 @@ const update = (req,res) => {
   }
 
   post.title = req.body.title;
+  post.content = req.body.content;
+  post.tags = req.body.tags;
   post.image = req.body.image;
 
   res.json(post)
