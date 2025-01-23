@@ -10,6 +10,8 @@ app.use(cors({origin:'http://localhost:5173'}))
 
 app.use(express.json());
 
+app.use(express.static('public'))
+
 app.get('/' , (req,res) => {
   res.send('Server attivo')
 })
